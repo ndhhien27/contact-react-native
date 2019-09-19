@@ -1,0 +1,46 @@
+import React from 'react';
+import { TouchableOpacity, View, Text, Image, StyleSheet } from 'react-native';
+
+import ContactImg from './ContactImg'
+
+import man from '../assets/man.png';
+import phone from '../assets/telephone.png';
+
+export default function ContactListItem(props) {
+
+    const { contact, onPress } = props
+    return (
+        <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={onPress}
+        >
+            <View style={styles.container}>
+                <ContactImg name={contact.name} style={{ width: 48, height: 48 }} />
+                <Text style={styles.text} numberOfLines={1}>{contact.name}</Text>
+                <Image source={phone} style={{ width: 32, height: 32, marginLeft: 16 }} />
+            </View>
+        </TouchableOpacity>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 8,
+        flexDirection: 'row',
+        borderBottomColor: '#000',
+        alignItems: 'center',
+        borderBottomWidth: 1,
+        padding: 8
+    },
+    image: {
+        width: 48,
+        height: 48
+    },
+    text: {
+        marginHorizontal: 8,
+        fontSize: 24,
+        fontWeight: '400',
+        width: 240,
+        marginLeft: 16
+    }
+})
