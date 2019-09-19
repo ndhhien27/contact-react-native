@@ -2,12 +2,14 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 
 import AppNavigator from './AppNavigator';
-
+import ContactProvider from './Contexts/ContactContext'
 const AppContainer = createAppContainer(AppNavigator);
 
 export default function App() {
   return (
-    <AppContainer />
+    <ContactProvider>
+      <AppContainer />
+    </ContactProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TextInput, StyleSheet, Image } from 'react-native'
+import { Text, View, TextInput, StyleSheet, Button } from 'react-native'
 
 import man from '../assets/man.png'
 import ContactImg from '../components/ContactImg'
@@ -27,7 +27,10 @@ export default function Contact(props) {
 }
 
 Contact.navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('contactName')
+    title: navigation.getParam('contactName'),
+    headerRight: (
+        <Button title='Save' />
+    )
 })
 
 const styles = StyleSheet.create({
@@ -35,6 +38,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: 'black',
         fontSize: 32,
+        marginBottom: 16,
+        paddingBottom: 8
     },
     image: {
         width: 240,
