@@ -21,7 +21,7 @@ export default function ContactList(props) {
             <View style={[styles.search]}>
                 <Image source={search} style={{ width: 32, height: 32 }} />
                 <TextInput
-                    style={{ paddingLeft: 16 }}
+                    style={{ marginLeft: 16, fontSize: 24, flex: 1 }}
                     placeholder='Search'
                 />
             </View>
@@ -68,7 +68,9 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         borderWidth: 1,
         flexDirection: 'row',
-        padding: 4
+        padding: 4,
+        borderRadius: 10,
+        paddingLeft: 16
     },
     wrapper: {
         paddingHorizontal: 16,
